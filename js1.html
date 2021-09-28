@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoneyMoon Hotel Expense</title>
+</head>
+<body>
+    
+    <script>
+      function hotelCostCal(day){
+          var cost=0;
+          if(day<=10){
+              cost=day*100;
+          }else if(day<=20){
+              var first10days=10*100;
+              var remaining=day-10;
+              var second10days=remaining*80;
+              cost=first10days+second10days;
+          }else{
+              var first10days=10*100;
+              var second10days=10*80;
+              var remaining=day-20;
+              var restOfdays=remaining*50;
+              cost=first10days+second10days+restOfdays;
+          }
+
+          return cost;
+
+      }  
+
+      var output=hotelCostCal(30)
+      document.write(output);
+
+    </script>
+        
+</body>
+</html>
